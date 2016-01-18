@@ -7,8 +7,11 @@ What is it?
   It will run all the Docking Stations and simulate all the bikes.
   It will emulate all the infrastructures needed (Vans, Repair Staff, etc.)
   
-How is it structured?
----------------------
+Documentation
+-------------
 
-  Domain models can be found in the ./media/ folder. 
+  Domain models can be found in the ./docs/dom_models/ folder. 
+  Other documentation will be find in the ./docs/ Directory.
+  
+  
   
