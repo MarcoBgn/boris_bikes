@@ -1,4 +1,4 @@
-					          Boris Bikes 
+					        # Boris Bikes 
 
 What is it?
 -----------
@@ -7,4 +7,8 @@ What is it?
   It will run all the Docking Stations and simulate all the bikes.
   It will emulate all the infrastructures needed (Vans, Repair Staff, etc.)
   
+How is it structured?
+---------------------
+
+  Domain models can be found in the ./media/ folder. 
   
