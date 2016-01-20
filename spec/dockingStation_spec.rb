@@ -23,9 +23,10 @@ describe "#dock_bike" do
     expect(subject).to respond_to(:dock_bike)
   end
   it "Returns an error when the station is full" do
-    subject.dock_bike(Bike.new)
+    21.times { subject.dock_bike Bike.new }
     expect { subject.dock_bike(Bike.new) }.to raise_error "The Station is Full"
   end
+  
 end
   it "Can access the @bikes instance variable" do
     expect(subject.bikes).to eq []
