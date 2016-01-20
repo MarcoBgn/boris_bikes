@@ -15,6 +15,7 @@ class DockingStation
 end
   
   def dock_bike(bike)
+    raise "The Station is Full" unless @bikes == []
     @bikes << bike
   end
 end

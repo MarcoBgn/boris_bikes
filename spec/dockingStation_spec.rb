@@ -18,9 +18,15 @@ describe "#release_bike" do
      expect { subject.release_bike }.to raise_error "No Bikes Available"
   end
 end
+describe "#dock_bike" do
   it "Responds to .dock_bike" do
     expect(subject).to respond_to(:dock_bike)
   end
+  it "Returns an error when the station is full" do
+    subject.dock_bike(Bike.new)
+    expect { subject.dock_bike(Bike.new) }.to raise_error "The Station is Full"
+  end
+end
   it "Can access the @bikes instance variable" do
     expect(subject.bikes).to eq []
   end
