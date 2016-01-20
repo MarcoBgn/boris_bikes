@@ -27,31 +27,6 @@ describe "#dock_bike" do
     expect { subject.dock_bike(Bike.new) }.to raise_error "The Station is Full"
   end
   
-  pending describe "#full?" do
-    it "responds to .full?" do
-      expect(subject).to respond_to(:full?)
-    end
-    it "Returns false when the station is not full" do
-      expect(subject.full?).to eq false
-    end
-    it "Returns true when the station is full" do
-      21.times { subject.dock_bike(Bike.new)}
-      expect(subject.full?).to eq true
-    end
-  end
-  
-  pending describe "#empty?" do
-    it "responds to .empty?" do
-      expect(subject).to respond_to(:empty?)
-    end
-    it "Returns true when the station is empty" do
-      expect(subject.empty?).to eq true
-    end
-    it "Returns false when the station is not empty" do 
-      subject.dock_bike(Bike.new)
-      expect(subject.empty?).to eq false
-    end
-  end
   
 end
   it "Can access the @bikes instance variable" do
