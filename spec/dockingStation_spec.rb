@@ -7,8 +7,10 @@ describe DockingStation do
   it "Responds to .release_bike" do
     expect(subject).to respond_to(:release_bike)
   end
-  it "Releases a new instance of Bike when .release_bike is called" do
-    expect(subject.release_bike).to_not eq nil 
+  it "#release_bike" do
+      bike = Bike.new
+      subject.dock_bike(bike)
+      expect(subject.release_bike).to eq bike
   end
   it "Responds to .dock_bike" do
     expect(subject).to respond_to(:dock_bike)
@@ -20,6 +22,5 @@ describe DockingStation do
  it "Adds an instance of Bike to an instance of DockingStation using .dock_bike" do
     expect(subject.dock_bike(subject.release_bike)).to eq subject.bikes
   end
-  
   
 end

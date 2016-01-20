@@ -7,7 +7,7 @@ class DockingStation
   end
   
   def release_bike
-    Bike.new
+    @bikes.pop
   end
   
   def dock_bike(bike)
