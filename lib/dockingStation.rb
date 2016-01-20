@@ -17,7 +17,7 @@ class DockingStation
   
 private
   def full?
-    @bikes.size > 20 ? true : false
+    @bikes.size >= 20 ? true : false
   end
   
   def empty?

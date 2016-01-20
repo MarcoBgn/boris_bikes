@@ -23,7 +23,7 @@ describe "#dock_bike" do
     expect(subject).to respond_to(:dock_bike)
   end
   it "Returns an error when the station is full" do
-    21.times { subject.dock_bike Bike.new }
+    20.times { subject.dock_bike Bike.new }
     expect { subject.dock_bike(Bike.new) }.to raise_error "The Station is Full"
   end
   
