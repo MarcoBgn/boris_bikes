@@ -7,8 +7,12 @@ class DockingStation
   end
   
   def release_bike
+    if @bikes == []
+      raise "No Bikes Available"
+    else
     @bikes.pop
   end
+end
   
   def dock_bike(bike)
     @bikes << bike
