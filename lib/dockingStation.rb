@@ -7,20 +7,12 @@ class DockingStation
   end
   
   def release_bike
-    if @bikes == []
-      raise "No Bikes Available"
-    else
-    @bikes.pop
+    @bikes == [] ? raise("No Bikes Available") : @bikes.pop
   end
-end
   
   def dock_bike(bike)
   
-    if @bikes.size > 20
-      raise "The Station is Full"
-    else
-    @bikes << bike
-    end
+    @bikes.size > 20 ? raise("The Station is Full") : @bikes << bike
   end
 
 end
