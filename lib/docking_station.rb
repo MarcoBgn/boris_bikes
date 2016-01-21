@@ -10,35 +10,25 @@ class DockingStation
   end
 
 	def release_bike
-    number_of_bikes = @bikes.length
-      @bikes.each do |bike|
-      if bike.working == true
-        @bikes.delete(bike)
-        return bike
-      end
-    end
-    raise 'No bikes available'
-	end
+    working_bike = @bikes.delete( @bikes.find { |bike| bike.working } )
+    raise 'No bikes available' unless working_bike
+    working_bike
+  end
 
 	def dock(bikes)
-    raise "Docking Station Full" if full?
-  	@bikes << bikes
-	end
+    full? ? raise("Docking Station Full") : @bikes << bikes
+  end
 
 	attr_reader :bikes, :capacity
 
   private
 
   def full?
-    if @bikes.length >= @capacity
-      true
-    end
+   return true if @bikes.length >= @capacity
   end
 
   def empty?
-    if @bikes.length == 0
-      true
-    end
+    return true if empty?
   end
 
 end

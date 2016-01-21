@@ -10,7 +10,8 @@ describe DockingStation do
 		expect {station.release_bike}.to raise_error 'No bikes available'
 	end
 
-	it "releases bike" do
+	it "releases bikes" do
+    allow(bike).to receive(:working).and_return(true)
 		station.dock(bike)
 		expect(station.release_bike).to eq bike
 	end
@@ -45,14 +46,19 @@ describe DockingStation do
   end
   
   it 'does not release a broken bike' do
+    allow(bike).to receive(:report_broken).and_return(true)
+    allow(bike).to receive(:working).and_return(false)
     bike.report_broken
     station.dock(bike)
     expect { station.release_bike }.to raise_error "No bikes available"
   end
   
   it 'returns working bike if one is docked' do
-    station.dock(bike)
     bike_2 = double(:bike)
+    allow(bike_2).to receive(:report_broken).and_return(true)
+    allow(bike_2).to receive(:working).and_return(false)
+    allow(bike).to receive(:working).and_return(true)
+    station.dock(bike)
     bike_2.report_broken
     station.dock(bike_2)
     expect(station.release_bike).to eq bike 
