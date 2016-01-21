@@ -1,5 +1,4 @@
 require './lib/docking_station.rb'
-require './lib/bike.rb'
 
 describe 'docks a certain number of bikes' do
   it 'docks twenty bikes' do
@@ -34,4 +33,14 @@ describe 'broken bikes' do
      station.dock(bike)
      expect { station.release_bike }.to raise_error "No bikes available"
    end
+end
+
+describe 'Van' do
+  it 'collects broken bikes from a station' do
+  van = Van.new         #still have to substitute with doubles
+  #######################assuming that the van is called when needed
+  van.collect_bikes(station)   #the van collects the bikes at the specific station
+  expect(van.bikes).to eq 3
+end
+  
 end
