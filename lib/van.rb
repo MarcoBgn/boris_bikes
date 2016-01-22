@@ -9,9 +9,6 @@ class Van
 	   @units = []
 	 end
    
-   
-   
-
 	 def collect(station)
     station.bikes.each {|bike| @units << bike if bike.working == false }.delete_if {|bike| bike.working == false }
     raise "No bikes available" if @units.size == 0

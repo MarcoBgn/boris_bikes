@@ -1,5 +1,5 @@
 class Bike
-<<<<<<< HEAD
+
 	attr_accessor :working
 
 	def initialize(working=true)
@@ -11,9 +11,5 @@ class Bike
   end
 
 end
-=======
-  def working?
-    true
-  end
-end
->>>>>>> master
+
+

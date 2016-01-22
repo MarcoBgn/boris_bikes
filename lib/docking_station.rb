@@ -27,22 +27,12 @@ class DockingStation
     @bikes << bike
   end
 
-private
-
-  def full?
-  	if @bikes.length == @capacity
-  		true
-  	else
-  		false
-  	end
-  end
-
-  def  empty?
-  	if  bikes.length == 0
-  		true
-  	else
-  		false
-  	end
-
-  end
+  private
+    def full?
+      @bikes.size >= DEFAULT_CAPACITY ? true : false
+    end
+  
+    def empty?
+      @bikes.empty? ? true : false
+    end
 end
