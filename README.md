@@ -11,7 +11,7 @@ Documentation
 -------------
 
   Domain models can be found in the ./docs/dom_models/ folder. 
-  Other documentation will be find in the ./docs/ Directory.
+  Other documentation will be found in the ./docs/ Directory.
   
   
   
