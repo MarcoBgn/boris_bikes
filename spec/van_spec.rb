@@ -19,16 +19,22 @@ describe Van do
 	    bike_b = bike
 	    bike_b.report
 		station.dock(bike_b)
-    	expect(van.collect(station)).to eq [bike_b]
+    	expect(van.collect(station)).to eq "Collected 1 bike"
     	end
 
-    	it 'collects broken bikes and leaves working bikes' do 
+    it 'collects broken bikes and leaves working bikes' do 
     	station.dock(bike)
-    	bike2 = bike
+    	bike2 = Bike.new
     	bike2.report 
     	station.dock(bike2)
-    	expect(van.collect(station)).to eq [bike2]
-    	end	
+    	expect(van.collect(station)).to eq "Collected 1 bike"
+    end	
+    
+    it "returns an error when no bikes are collected" do
+      station.dock(bike)
+      expect { van.collect(station) } .to raise_error "No bikes available"
+    end
+    
 	end
 
 end	
